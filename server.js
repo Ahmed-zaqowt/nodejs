@@ -7,7 +7,8 @@ dotenv.config({path :'config.env'});
 const ApiError = require('./utils/ApiError');
 const globalError = require('./app/middlewares/errorMiddleware');
 const dbconnection = require('./app/Config/databaes');
-const cate = require('./routes/task');
+const task = require('./routes/task');
+const sub = require('./routes/subtask');
 const auth = require('./routes/user')
 dbconnection();
 
@@ -25,8 +26,9 @@ if(process.env.NODE_ENV == "development"){
 
 
 // routes 
-app.use("/api/task" , cate);
+app.use("/api/task" , task);
 app.use("/api/auth" , auth);
+app.use("/api/sub" , sub);
 
 
 app.all("*", (req ,res, next) =>{
