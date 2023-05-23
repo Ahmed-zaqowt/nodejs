@@ -1,9 +1,9 @@
-/*const { check } = require('express-validator');
+const { check } = require('express-validator');
 const validatorMiddleware = require('../../app/middlewares/validatorMiddleware');
 const User = require('../../app/Models/UserModel');
 
 exports.signupValidator = [
-  check('name')
+  check('username')
     .notEmpty()
     .withMessage('User required')
     .isLength({ min: 3 })
@@ -34,4 +34,4 @@ exports.loginValidator = [
     .withMessage('Password must be at least 6 characters'),
 
   validatorMiddleware,
-];*/
+];

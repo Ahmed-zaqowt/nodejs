@@ -9,7 +9,8 @@ const globalError = require('./app/middlewares/errorMiddleware');
 const dbconnection = require('./app/Config/databaes');
 const task = require('./routes/task');
 const sub = require('./routes/subtask');
-const auth = require('./routes/user')
+const auth = require('./routes/user');
+const rate = require('./routes/avg');
 dbconnection();
 
 
@@ -29,6 +30,8 @@ if(process.env.NODE_ENV == "development"){
 app.use("/api/task" , task);
 app.use("/api/auth" , auth);
 app.use("/api/sub" , sub);
+app.use("/api/rate" , rate);
+
 
 
 app.all("*", (req ,res, next) =>{
