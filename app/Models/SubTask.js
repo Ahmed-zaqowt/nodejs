@@ -1,4 +1,3 @@
-// create schema 
 const mongoose = require('mongoose');
 
 const subTaskSchema = new mongoose.Schema({
@@ -25,7 +24,6 @@ const subTaskSchema = new mongoose.Schema({
     },
     
 });
- // Create model 
 
  const taskModel = new mongoose.model('SubTasks' , subTaskSchema);
 

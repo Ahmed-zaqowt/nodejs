@@ -27,8 +27,15 @@ const taskSchema = new mongoose.Schema({
         ref: 'Users'
     }
     ,
+    created_at: {
+        type: Date,
+        default: Date.now
+    },
+    updated_at: {
+        type: Date,
+        default: Date.now
+    },
     userId : String,
-    subtasks : [SubTask.schema]
     
 });
  // Create model 
